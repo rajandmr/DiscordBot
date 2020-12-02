@@ -10,9 +10,7 @@
 //   console.log(`Example app listening at http://localhost:${port}`);
 // });
 
-let botToken =
-  process.env.DISCORD_BOT_TOKEN ||
-  'NzUyMTczMDIxMzQyNzI4MzQy.X1Txtg.LPggN14fdrMTbUBNHLnIMXrTA9U';
+let botToken = process.env.DISCORD_BOT_TOKEN;
 
 const { Client } = require('discord.js');
 const client = new Client();
