@@ -1,15 +1,3 @@
-// const express = require('express');
-// const app = express();
-// const port = process.env.port || 3000;
-
-// app.get('/', (req, res) => {
-//   res.send('Hello World!');
-// });
-
-// app.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`);
-// });
-
 let botToken = process.env.DISCORD_BOT_TOKEN;
 
 const { Client } = require('discord.js');
