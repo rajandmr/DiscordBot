@@ -1,4 +1,8 @@
-let botToken = process.env.DISCORD_BOT_TOKEN;
+const botToken = process.env.DISCORD_BOT_TOKEN;
+
+const { generalMeme } = require('./features/generalMeme');
+const { dotaMeme } = require('./features/dotaMeme');
+const { programmingMeme } = require('./features/programmingMeme');
 
 const { Client } = require('discord.js');
 const client = new Client();
@@ -16,8 +20,25 @@ client.on('message', async (message) => {
 
     const args = message.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLocaleLowerCase();
+    let data;
+    switch (command) {
+      case 'meme':
+        data = await generalMeme();
+        await message.channel.send(data);
+        break;
 
-    await message.channel.send(command)
+      case 'dota':
+        data = await dotaMeme();
+        await message.channel.send(data);
+        break;
+      case 'programming':
+        data = await programmingMeme();
+        await message.channel.send(data);
+        break;
+
+      default:
+        await message.channel.send('command not found');
+    }
   } catch (error) {
     console.log(error);
   }
