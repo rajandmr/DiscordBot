@@ -1,6 +1,7 @@
-const botToken = process.env.DISCORD_BOT_TOKEN;
-
+require("dotenv").config();
 const { generalMeme } = require("./features/generalMeme");
+
+const botToken = process.env.DISCORD_BOT_TOKEN;
 const { dotaMeme } = require("./features/dotaMeme");
 const { programmingMeme } = require("./features/programmingMeme");
 
