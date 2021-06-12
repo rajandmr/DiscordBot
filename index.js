@@ -1,4 +1,4 @@
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 const { generalMeme } = require('./features/generalMeme');
 
 const botToken = process.env.DISCORD_BOT_TOKEN;
